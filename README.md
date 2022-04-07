@@ -5,7 +5,7 @@
 </div>
 
 > This repository is an official PyTorch implementation of paper:<br>
-> [Visual Abductive Reasoning]().<br>
+> [Visual Abductive Reasoning](https://arxiv.org/abs/2203.14040).<br>
 > [Chen Liang](https://leonnnop.github.io/), [Wenguan Wang](https://sites.google.com/view/wenguanwang/), [Tianfei Zhou](https://www.tfzhou.com/), [Yi Yang](https://scholar.google.com/citations?user=RMSuNFwAAAAJ&hl=zh-CN) <br>
 > CVPR 2022.
 
@@ -13,6 +13,7 @@
 ## News & Update Logs:
 - [x] [2022-03-25] Repo created. Paper, code, and data will come in a few days. Stay tuned.
 - [x] [2022-03-26] VAR dataset v1.0 released; Evaluation toolkit uploaded.
+- [x] [2022-04-07] Full paper available at [arXiv](https://arxiv.org/abs/2203.14040).
 
 
 ## Abstract
@@ -32,7 +33,7 @@ First, you can run the following script to prepare videos. The codes are adapted
 bash data/tools/download_videos.sh
 ```
 
-**Note:** You may fail to download some videos due to geographical restrictions or some other potential reasons. We have maintained a copy of the full dataset. Please consider contacting [me](mailto:leonnnop@gmail.com). 
+**Note:** You may fail to download some videos due to geographical restrictions or some other potential reasons. We have maintained a copy of the full dataset. Please fill out this [form](https://forms.gle/VD9Ryu5dZPG9fMy36) for having access. 
 
 #### Step 1-2: Prepare raw rgb frames.
 Then, use following scripts to extract RGB frames.
@@ -55,7 +56,7 @@ code_root/
         ├── data/
             ├── var_train_v1.0.json
             ├── var_val_v1.0.json
-        	└── var_test_v1.0.json
+        	└── var_test_v1.0.json 
         ├── videos/
         ├── rawframes/
         ├── video_feature/
