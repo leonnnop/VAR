@@ -14,4 +14,4 @@ bash models/get_reference_models.sh
 ```
 python extract_feature.py 
 ```
-Note: See more configurations in `extract_feature.py `.
+Note: See more configurations in `extract_feature.py`.

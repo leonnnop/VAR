@@ -15,7 +15,7 @@
 - [x] [2022-03-26] VAR dataset v1.0 released; Evaluation toolkit uploaded.
 - [x] [2022-04-07] Full paper available at [arXiv](https://arxiv.org/abs/2203.14040).
 - [x] [2022-06-22] Pre-extracted features released; Available at [Baidu Net Disk](https://pan.baidu.com/s/1Ju6O-05IhdVsNvpgbVpD7g) (code: dvar) and [OneDrive](https://1drv.ms/u/s!AjhElgOW1PYfgZAb0RfqcJv8TwygsA?e=zs0msT). 
-- [x] [2022-06-23] Feature extraction code with brief insturctions at [here](feature_kit). 
+- [x] [2022-06-23] Feature extraction code with brief insturctions at [here](feature_kit); Full code released. 
 
 
 ## Abstract
@@ -102,6 +102,7 @@ Here is an annotated example from VAR `test` split:
     "split": "test"                    # split of this example
 }
 ```
+
 ### Evaluation
 
 We provide a [toolkit](eval_kit) for model evaluation. If you are interested in performance comparison with Reasonser, we strongly recommend you to test VAR models using our static BERTScore implementation. If not, you may skip step 1.
@@ -138,6 +139,37 @@ tar xzf roberta_large_619fd8c.tar.gz -C ./eval_kit
 python eval_kit/evaluate_models.py ${PREDICTION_FILE} 
 ```
 
+## Baseline: Reasoner Usage
+
+**Note:** Please first prepare both the VAR Dataset and pre-extracted features following the instructions above. 
+### Prerequisites
+Step 1: Prepare conda environment.
+
+```bash
+conda create -n var python=3.7.10
+conda activate var
+pip install -r requirements.txt
+pip install torch==1.6.0+cu101 torchvision==0.7.0+cu101 -f https://download.pytorch.org/whl/torch_stable.html
+```
+
+Step 2: [optional] Build iRPE operators implemented by CUDA.
+
+This is used to speed up backpropagation through relative position module, which is directly forked from [iRPE](https://openaccess.thecvf.com/content/ICCV2021/html/Wu_Rethinking_and_Improving_Relative_Position_Encoding_for_Vision_Transformer_ICCV_2021_paper.html). Find more information at the original [repository](https://github.com/microsoft/Cream/tree/main/iRPE). Note: `nvcc` is necessary to build CUDA operators.
+```bash
+cd src/model/utils/rpe_ops
+python setup.py install --user
+```
+
+### Training
+```
+bash scripts/train.sh ${N_GPUS} ${MODEL_NAME} 
+```
+**Note:** Training with two NVIDIA GeForce 2080 Ti is recommended.
+
+## FAQ
+I arrive at better results (~3-4 points higher in CIDEr) on Explanation set or slightly worse results (~1-2 points lower in CIDEr) on Premise set. Why?
+>This is expected behavior. I do observe that the results are varied when trained on a different machine (with two NVIDIA GeForce 3090 or one NVIDIA Tesla V100) or with a different pytorch version (1.9.1 or 1.11.0), c.f., [this discussion](https://discuss.pytorch.org/t/different-training-results-on-different-machines-with-simplified-test-code/59378). But fortunately, a relatively small performance perturbation is observed on one single machine with a fixed seed.
+
 ## License
 
 ### Code License
@@ -168,7 +200,8 @@ Our implementation of Reasoner is partly based on the following codebases. We gr
 [BERTScore](https://github.com/Tiiiger/bert_score),
 [MART](https://github.com/jayleicn/recurrent-transformer),
 [vlep](https://github.com/jayleicn/VideoLanguageFuturePred),
-[densecap](https://github.com/salesforce/densecap).
+[densecap](https://github.com/salesforce/densecap),
+[iRPE](https://github.com/microsoft/Cream/tree/main/iRPE).
 
 
 ## Contact

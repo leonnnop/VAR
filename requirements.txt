@@ -1,0 +1,6 @@
+nltk
+easydict
+tqdm
+bert_score
+pycocoevalcap
+scipy
