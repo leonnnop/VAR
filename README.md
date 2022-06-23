@@ -15,6 +15,7 @@
 - [x] [2022-03-26] VAR dataset v1.0 released; Evaluation toolkit uploaded.
 - [x] [2022-04-07] Full paper available at [arXiv](https://arxiv.org/abs/2203.14040).
 - [x] [2022-06-22] Pre-extracted features released; Available at [Baidu Net Disk](https://pan.baidu.com/s/1Ju6O-05IhdVsNvpgbVpD7g) (code: dvar) and [OneDrive](https://1drv.ms/u/s!AjhElgOW1PYfgZAb0RfqcJv8TwygsA?e=zs0msT). 
+- [x] [2022-06-23] Feature extraction code with brief insturctions at [here](feature_kit). 
 
 
 ## Abstract
@@ -43,7 +44,7 @@ bash data/tools/extract_video_frames.sh
 ```
 
 #### Step 1-3: Prepare pre-extracted feature.
-If you are not interested in end-to-end training or extracting features with customized models, a quick option is to download our pre-extracted features. Both video and vocabulary features are available at [Baidu Net Disk](https://pan.baidu.com/s/1Ju6O-05IhdVsNvpgbVpD7g) (code: dvar) and [OneDrive](https://1drv.ms/u/s!AjhElgOW1PYfgZAb0RfqcJv8TwygsA?e=zs0msT). 
+If you are not interested in end-to-end training or extracting features with customized models, a quick option is to download our pre-extracted features. Both video and vocabulary features are available at [Baidu Net Disk](https://pan.baidu.com/s/1Ju6O-05IhdVsNvpgbVpD7g) (code: dvar) and [OneDrive](https://1drv.ms/u/s!AjhElgOW1PYfgZAb0RfqcJv8TwygsA?e=zs0msT). Code for feature extraction is also released at [here](feature_kit).
 
 #### Step 2: Prepare VAR annotations.
 For annotations, you may clone this github repository. VAR annotation files are released at [data](data). Another option is to download annotation files at [Baidu Net Disk](https://pan.baidu.com/s/1Ju6O-05IhdVsNvpgbVpD7g) (code: dvar) and [OneDrive](https://1drv.ms/u/s!AjhElgOW1PYfgZAb0RfqcJv8TwygsA?e=zs0msT). 
