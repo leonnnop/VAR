@@ -14,7 +14,7 @@
 - [x] [2022-03-25] Repo created. Paper, code, and data will come in a few days. Stay tuned.
 - [x] [2022-03-26] VAR dataset v1.0 released; Evaluation toolkit uploaded.
 - [x] [2022-04-07] Full paper available at [arXiv](https://arxiv.org/abs/2203.14040).
-- [x] [2022-06-22] Pre-extracted features released; Available at [Baidu Net Disk](https://pan.baidu.com/s/1Ju6O-05IhdVsNvpgbVpD7g) (code: dvar) and [OneDrive](https://1drv.ms/u/s!AjhElgOW1PYfgZAb0RfqcJv8TwygsA?e=zs0msT). 
+- [x] [2022-06-22] Pre-extracted features released; Available at [Baidu Net Disk](https://pan.baidu.com/s/1Ju6O-05IhdVsNvpgbVpD7g) (code: dvar) and [OneDrive](https://1drv.ms/f/s!AjhElgOW1PYfgZAbItTEAqfPO4Gejg?e=1N1pf5). 
 - [x] [2022-06-23] Feature extraction code with brief insturctions at [here](feature_kit); Full code released. 
 
 
